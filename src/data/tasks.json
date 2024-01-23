@@ -1,0 +1,60 @@
+{
+    "tasks": [
+        {
+            "id": 0,
+            "title": "JavaScript",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 1,
+            "title": "React",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 2,
+            "title": "NextJs",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React", "NextJs"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 3,
+            "title": "NextJs",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React", "NextJs"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 4,
+            "title": "Learning NextJs",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React", "NextJs"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 5,
+            "title": "Learning React",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React", "NextJs"],
+            "priority": "High",
+            "isFavorite": false
+        },
+        {
+            "id": 6,
+            "title": "Learning to code with JavaScript",
+            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "tags": ["JavaScript", "React", "NextJs", "Code"],
+            "priority": "High",
+            "isFavorite": false
+        }
+    ]
+}
