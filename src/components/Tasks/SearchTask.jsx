@@ -56,5 +56,3 @@ const SearchTask = ({ onSearch }) => {
 };
 
 export default SearchTask;
-
-
