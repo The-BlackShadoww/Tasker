@@ -69,9 +69,7 @@ const TaskList = ({ tasks, onTaskDelete, onTaskEdit, onFavorite }) => {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    {tasks.length === 0 ? <p>Task List is empty!</p> : list}
-                </tbody>
+                <tbody>{list}</tbody>
             </table>
         </>
     );

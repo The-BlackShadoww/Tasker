@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const SearchTask = ({ onSearch }) => {
     const [value, setValue] = useState("");
-    console.log(value);
 
     const handleChange = (e) => {
-        setValue(e.target.value);
-        onSearch(value);
+        const inputValue = e.target.value;
+        setValue(inputValue);
+        onSearch(inputValue);
     };
 
     const handleSubmit = (e) => {
@@ -24,9 +24,7 @@ const SearchTask = ({ onSearch }) => {
                         className="z-20 block w-full bg-gray-800 px-4 py-2 pr-10 focus:outline-none"
                         placeholder="Search Task"
                         value={value}
-                        // onChange={(e) => setValue(e.target.value)}
                         onChange={handleChange}
-                        // onInput={value}
                         required=""
                     />
                     <button
@@ -58,3 +56,5 @@ const SearchTask = ({ onSearch }) => {
 };
 
 export default SearchTask;
+
+

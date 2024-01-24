@@ -7,7 +7,8 @@ import AllTasks from "../../data/tasks.json";
 import { toast } from "react-toastify";
 
 const TaskBoard = () => {
-    const [tasks, setTasks] = useState(AllTasks.tasks);
+    const originalTaskList = AllTasks.tasks;
+    const [tasks, setTasks] = useState(originalTaskList);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [taskToEdit, setTaskToEdit] = useState(null);
 
@@ -39,7 +40,7 @@ const TaskBoard = () => {
     };
 
     const handleTaskDelete = (taskId, taskTitle) => {
-        if (confirm("Do you really want to delete that task?")) {
+        if (confirm(`Do you really want to delete ${taskTitle}?`)) {
             const deletedTasks = tasks.filter((t) => t.id !== taskId);
             setTasks(deletedTasks);
 
@@ -48,27 +49,17 @@ const TaskBoard = () => {
     };
 
     const handleDeleteAllTasks = () => {
-        tasks.length = 0;
-        setTasks([...tasks]);
-        toast.error("All tasks have been deleted!");
+        if (confirm("Do you really want to delete all the tasks?")) {
+            tasks.length = 0;
+            setTasks([...tasks]);
+            toast.error("All tasks have been deleted!");
+        }
     };
 
     const handleTaskEdit = (task) => {
         setTaskToEdit(task);
         setIsModalOpen(true);
     };
-
-    // const handelFavorite = (taskId) => {
-    //     const favorite = tasks.map((task) => {
-    //         if (task.id === taskId) {
-    //             return (task.favorite = !task.favorite);
-    //         } else {
-    //             return task;
-    //         }
-    //     });
-
-    //     setTasks([...favorite]);
-    // };
 
     const handelFavorite = (taskId) => {
         setTasks(
@@ -83,10 +74,10 @@ const TaskBoard = () => {
     };
 
     const handleSearch = (value) => {
-        console.log(value);
-
-        if (value) {
-            const filtered = tasks.filter((task) =>
+        if (value.trim() === "") {
+            setTasks(originalTaskList);
+        } else {
+            const filtered = originalTaskList.filter((task) =>
                 task.title.toLowerCase().includes(value.toLowerCase())
             );
             setTasks([...filtered]);
@@ -119,12 +110,20 @@ const TaskBoard = () => {
                             </div>
                         </div>
                         <div className="overflow-auto">
-                            <TaskList
-                                tasks={tasks}
-                                onTaskDelete={handleTaskDelete}
-                                onTaskEdit={handleTaskEdit}
-                                onFavorite={handelFavorite}
-                            />
+                            {tasks.length > 0 ? (
+                                <TaskList
+                                    tasks={tasks}
+                                    onTaskDelete={handleTaskDelete}
+                                    onTaskEdit={handleTaskEdit}
+                                    onFavorite={handelFavorite}
+                                />
+                            ) : (
+                                <div className="w-full text-center p-4">
+                                    <p className="text-xl font-medium text-red-500">
+                                        Task List is empty !
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

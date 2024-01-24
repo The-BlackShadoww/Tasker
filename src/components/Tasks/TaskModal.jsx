@@ -35,19 +35,22 @@ const TaskModal = ({ onSubmit, onModalClose, taskToEdit }) => {
         e.preventDefault();
 
         if (!title && !description && !priority && tags.length === 0) {
-            toast.error("Please fill the form first");
+            toast.warning("Please fill the form first");
         } else if (!title) {
-            toast.error("Please enter a title");
+            toast.warning("Please enter a title");
         } else if (!description) {
-            toast.error("Please enter a description.");
+            toast.warning("Please enter a description.");
         } else if (priority === "") {
-            toast.error("Please select a priority.");
-        } else if (tags.length === 0) {
-            toast.error("Please enter at least one tag.");
+            toast.warning("Please select a priority.");
+        } else if (tags.length === 0 || tags[0].trim() === "") {
+            toast.warning("Please enter at least one tag.");
         } else {
             toast.success(
-                `${task.title} has been ${isAdd ? "added" : "edited"} to the task list.`
+                `${task.title} has been ${
+                    isAdd ? "added" : "edited"
+                } to the task list.`
             );
+
             onSubmit(task, isAdd);
         }
     };
@@ -55,10 +58,7 @@ const TaskModal = ({ onSubmit, onModalClose, taskToEdit }) => {
     return (
         <>
             <div className="bg-black bg-opacity-70 h-full w-full z-10 absolute top-0 left-0"></div>
-            <form
-                onSubmit={handleSubmit}
-                className="mx-auto my-10 w-full max-w-[740px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4 lg:my-20 lg:p-11 z-10 absolute top-1/4 left-1/3"
-            >
+            <form className="mx-auto my-10 w-full max-w-[740px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4 lg:my-20 lg:p-11 z-10 absolute top-1/4 left-1/3">
                 <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">
                     {isAdd ? "Add New Task" : "Edit Task"}
                 </h2>
@@ -136,6 +136,7 @@ const TaskModal = ({ onSubmit, onModalClose, taskToEdit }) => {
                     <button
                         type="submit"
                         className="rounded bg-blue-600 px-4 py-2 text-white transition-all hover:opacity-80"
+                        onClick={handleSubmit}
                     >
                         {isAdd ? "Create New Task" : "Edit Task"}
                     </button>
