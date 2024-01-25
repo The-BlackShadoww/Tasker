@@ -2,57 +2,17 @@
     "tasks": [
         {
             "id": 0,
-            "title": "JavaScript",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "title": "Learn JavaScript",
+            "description": "JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat.",
             "tags": ["JavaScript"],
             "priority": "High",
             "isFavorite": false
         },
         {
             "id": 1,
-            "title": "React",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
+            "title": "Learn React",
+            "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js.",
             "tags": ["JavaScript", "React"],
-            "priority": "High",
-            "isFavorite": false
-        },
-        {
-            "id": 2,
-            "title": "NextJs",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
-            "tags": ["JavaScript", "React", "NextJs"],
-            "priority": "High",
-            "isFavorite": false
-        },
-        {
-            "id": 3,
-            "title": "NextJs",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
-            "tags": ["JavaScript", "React", "NextJs"],
-            "priority": "High",
-            "isFavorite": false
-        },
-        {
-            "id": 4,
-            "title": "Learning NextJs",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
-            "tags": ["JavaScript", "React", "NextJs"],
-            "priority": "High",
-            "isFavorite": false
-        },
-        {
-            "id": 5,
-            "title": "Learning React",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
-            "tags": ["JavaScript", "React", "NextJs"],
-            "priority": "High",
-            "isFavorite": false
-        },
-        {
-            "id": 6,
-            "title": "Learning to code with JavaScript",
-            "description": "sdf sdf sdf sgdsf srf sdf sdf gasdf",
-            "tags": ["JavaScript", "React", "NextJs", "Code"],
             "priority": "High",
             "isFavorite": false
         }

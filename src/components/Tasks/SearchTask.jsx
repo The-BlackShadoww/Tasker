@@ -4,6 +4,7 @@ const SearchTask = ({ onSearch }) => {
     const [value, setValue] = useState("");
 
     const handleChange = (e) => {
+        e.preventDefault()
         const inputValue = e.target.value;
         setValue(inputValue);
         onSearch(inputValue);

@@ -1,0 +1,9 @@
+export const actionTypes = {
+    ADD_EDIT_TASK: "ADD_EDIT_TASK",
+    DELETE_A_TASK: "DELETE_A_TASK",
+    DELETE_ALL_TASK: "DELETE_ALL_TASK",
+    TASK_TO_EDIT: "TASK_TO_EDIT",
+    FAVORITE: "FAVORITE",
+    SEARCH: "SEARCH",
+    ON_CHANGE: "ON_CHANGE",
+};

@@ -1,10 +1,11 @@
+import { actionTypes } from "./actionTypes";
 import AllTasks from "../data/tasks.json";
 
 export const initialState = AllTasks.tasks;
 
 export const taskReducer = (state, action) => {
     switch (action.type) {
-        case "ADD_&_EDIT_TASK":
+        case actionTypes.ADD_EDIT_TASK:
             if (action.isAdd) {
                 return [...state, action.payload];
             } else {
@@ -17,14 +18,14 @@ export const taskReducer = (state, action) => {
                 });
             }
 
-        case "DELETE_A_TASK":
+        case actionTypes.DELETE_A_TASK:
             return state.filter((t) => t.id !== action.taskId);
 
-        case "DELETE_ALL_TASK":
+        case actionTypes.DELETE_ALL_TASK:
             state.length = 0;
             return [...state];
 
-        case "FAVORITE":
+        case actionTypes.FAVORITE:
             return state.map((task) => {
                 if (task.id === action.taskId) {
                     return { ...task, isFavorite: !task.isFavorite };
@@ -33,7 +34,7 @@ export const taskReducer = (state, action) => {
                 }
             });
 
-        case "SEARCH":
+        case actionTypes.SEARCH:
             if (action.value.trim() === "") {
                 return initialState;
             } else {
